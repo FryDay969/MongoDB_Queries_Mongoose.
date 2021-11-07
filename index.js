@@ -13,12 +13,6 @@ const PORT = process.env.PORT;
 app.use(bodyParser.urlencoded({extended:true}));
 const phone = mongoose.model("phone", phonesSchema);
 
-
-
-//-------Array for saving users-------//
-
-let users = [];
-
 //-------Route functions-------//
 const getNewPhone = (req,res) => {
     if(req.url !== ('/phones/new')){
