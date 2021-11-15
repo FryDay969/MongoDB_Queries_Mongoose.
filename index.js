@@ -6,6 +6,7 @@ const ObjectId = require('mongodb').ObjectID;
 const phonesSchema = require('./DB/db.schemas')
 const bodyParser = require('body-parser')
 
+
 require("dotenv").config()
 const PORT = process.env.PORT;
 
@@ -40,7 +41,7 @@ const printPhones = (req,res) => {
             const db = client.db(dbName);
             const collection = db.collection('phones');
             const findResult = await collection.find({}).toArray();
-            res.send(findResult)
+            res.status(200).send(findResult)
         }
         main()
     }
